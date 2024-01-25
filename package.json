@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "start": "node index.mjs",
-    "test": "jest index.test.js"
+    "start": "node index.js",
+    "test": "jest app.test.js"
   },
   "keywords": [],
   "author": "",
