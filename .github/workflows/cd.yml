@@ -1,7 +1,11 @@
 name: CD
+
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,10 +15,13 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
+        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.KEY }}
         port: 22
-        script: |
+        script: |          
+          cd /home/apps/devops
           git pull origin main
           git status
           npm install --only=prod
-          pm2 restart node1
+          pm2 restart index.js
+          whoami
