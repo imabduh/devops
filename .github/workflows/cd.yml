@@ -13,10 +13,10 @@ jobs:
     - name: Deploy using ssh ${{ secrets.KEY }}
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        key: ${{ secrets.KEY }}
+        host: 'vps.mabduh.com'
+        username: 'root'
+        password: 'Ma23092002'
+        key: '203.175.11.156 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICNWX82p7zYbWDPTrPEk1c+veJQxuK5Q3fsn2hyPTOUr'
         port: 22
         script: |          
           cd / && cd /home/apps/devops
